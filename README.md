@@ -4,6 +4,46 @@ ID: CT4DS2852
 Domain: Data Analysis
 Duration:June 20 to July 20
 Mentor: Muzammil Ahmed
+CODE:
+#read data
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+df=pd.read_csv("d.csv",header=None)
+df.info()
+# Load the diabetes dataset
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+df = sns.load_dataset('iris')
+# Display the first few rows of the dataset
+print(df.head())
+
+# Display basic information about the dataset
+print(df.info())
+
+# Display descriptive statistics
+print(df.describe())
+# Check for missing values
+print(df.isnull().sum())
+df.hist(figsize=(10, 8))
+plt.tight_layout()
+plt.show()
+sns.pairplot(df, hue='species', markers=['o', 's', 'D'])
+plt.show()
+plt.figure(figsize=(12, 6))
+
+# Create boxplots for each feature
+for i, column in enumerate(df.columns[:-1], 1):
+    plt.subplot(2, 2, i)
+    sns.boxplot(x='species', y=column, data=df)
+    plt.title(f'Boxplot of {column}')
+
+plt.tight_layout()
+plt.show()
+
+
 Project Overview:Exploratory Data Analysis(EDA) on  Diabetes Dataset 
 <img width="1440" alt="Screenshot 2024-06-28 at 8 59 01 PM" src="https://github.com/taranij/codetech/assets/174124687/cc3e9c63-86b3-425f-9b01-0d1c8b99585e">
 <img width="1440" alt="Screenshot 2024-06-28 at 8 59 05 PM" src="https://github.com/taranij/codetech/assets/174124687/e7ac748d-c9a6-4cb6-bebe-404cce03ecb6">
